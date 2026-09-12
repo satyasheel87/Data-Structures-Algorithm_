@@ -1,0 +1,8 @@
+console.log(Math.abs(-20))
+console.log(Math.ceil(9.1))
+console.log(Math.ceil(10.8))
+console.log(Math.floor(10.1))
+console.log(Math.round(14.8))
+console.log(Math.trunc(14.545445785428))
+console.log(Math.pow(5,2))
+console.log(Math.random())
