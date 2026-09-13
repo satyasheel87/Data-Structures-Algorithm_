@@ -4,7 +4,7 @@
 // let k = Number(prompt("enter a number: "));
 
 
-// Trapping rain water 
+// Trapping rain water - problem solution 
 let height = [4, 2, 0, 3, 2, 5]
  
 let left = new Array(height.length)
