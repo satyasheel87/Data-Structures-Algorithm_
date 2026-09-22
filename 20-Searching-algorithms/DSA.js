@@ -1,7 +1,9 @@
-// Searching Algorithm ,
+// Searching Algorithm   <---------------
 
-// Linear search in array
+/*=====================================
+Linear search in array
 // line by line chalta hai
+=======================================*/
 let linear = [56, 86, 23, 47, 29, 35, 16, 18, 73];
 let lTarget = 18;
 let lIndex = -1;
@@ -14,7 +16,10 @@ for (let i = 0; i < linear.length; i++) {
 }
 console.log(lIndex == -1 ? "Not found" : `${lTarget} found at ${lIndex} index`);
 
-// this is binary search
+/*=====================================
+this is binary search
+=======================================*/
+
 let prompt = require("prompt-sync")();
 let arr = [12, 56, 32, 89, 92];
 let target = Number(prompt("Enter search element: "));

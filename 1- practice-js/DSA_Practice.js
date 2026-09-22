@@ -29,19 +29,44 @@
 // }
 // console.log(ans)
 
-let nums = [0, 1, 0, 3, 12];
-const moveZeros = (nums) => {
-  let j = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      nums[j] = nums[i];
-      j++;
+// let myMap = new Map();
+
+// myMap.set(9, 0);
+// myMap.set(5, 1);
+// myMap.set(6, 2);
+// myMap.set(4, 3);
+
+// myMap.set(9, 5);
+
+// console.log(myMap);
+
+let s = "loveleetcode";
+
+var firstUniqChar = function (s) {
+  let charDiary = {};
+  for (let i = 0; i < s.length; i++) {
+    console.log(charDiary);
+    let char = s[i];
+    if (charDiary[char]) {
+      charDiary[char]++;
+    } else {
+      charDiary[char] = 1;
     }
   }
-  while (j < nums.length) {
-    nums[j] = 0;
-    j++;
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i]; //l
+    if (charDiary[char] === 1) {
+      return i;
+    }
   }
-  return nums;
+
+  return -1;
 };
-console.log(moveZeros(nums));
+
+console.log(firstUniqChar(s));
+
+let myObject = {
+  l: 5,
+  e: 3,
+};
+console.log(myObject["l"]);
