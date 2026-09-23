@@ -40,33 +40,22 @@
 
 // console.log(myMap);
 
-let s = "loveleetcode";
+let strs = ["dog", "racecar", "car"];
 
-var firstUniqChar = function (s) {
-  let charDiary = {};
-  for (let i = 0; i < s.length; i++) {
-    console.log(charDiary);
-    let char = s[i];
-    if (charDiary[char]) {
-      charDiary[char]++;
+var longestCommonPrefix = function (strs) {
+  if (!strs || strs.length === 0) return "";
+  strs.sort();
+  let first = strs[0];
+  let last = strs[strs.length - 1];
+  let result = "";
+
+  for (let i = 0; i < first.length; i++) {
+    if (first[i] === last[i]) {
+      result += first[i];
     } else {
-      charDiary[char] = 1;
+      break;
     }
   }
-  for (let i = 0; i < s.length; i++) {
-    let char = s[i]; //l
-    if (charDiary[char] === 1) {
-      return i;
-    }
-  }
-
-  return -1;
+  return result;
 };
-
-console.log(firstUniqChar(s));
-
-let myObject = {
-  l: 5,
-  e: 3,
-};
-console.log(myObject["l"]);
+console.log(longestCommonPrefix(strs));
