@@ -40,22 +40,21 @@
 
 // console.log(myMap);
 
-let strs = ["dog", "racecar", "car"];
+let nums = [2, 7, 11, 15],
+  target = 9;
 
-var longestCommonPrefix = function (strs) {
-  if (!strs || strs.length === 0) return "";
-  strs.sort();
-  let first = strs[0];
-  let last = strs[strs.length - 1];
-  let result = "";
+var twoSum = function (nums, target) {
+  let map = new Map();
+  for (let i = 0; i < nums.length; i++) {
 
-  for (let i = 0; i < first.length; i++) {
-    if (first[i] === last[i]) {
-      result += first[i];
-    } else {
-      break;
+    let required = target - nums[i];
+
+    if (map.has(required)) {
+      return [map.get(required), i];
     }
+    
+    map.set(nums[i], i);
   }
-  return result;
 };
-console.log(longestCommonPrefix(strs));
+
+console.log(twoSum(nums, target));
