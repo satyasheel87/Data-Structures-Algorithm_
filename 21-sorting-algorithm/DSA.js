@@ -1,32 +1,24 @@
 // shorting algorith.
 
-// Bubble short 
-// selection short 
-// insertion short 
+// Bubble short
+// selection short
+// insertion short
 
 // pattern programming nested looping
 
+let nums = [1, 2, 3, 1, 1, 3];
 
-let arr = [5, 4, 3, 2, 1];
-
-function selectionSort(arr) {
-    // Write your logic here
-    let n = arr.length
-    for (let i = 0; i < n - 1; i++) {
-        let min = i
-        for (let j = i + 1; j < n; j++) {
-            if (arr[j] < arr[min]) {
-                min = j
-            }
-        }
-        if (min != i) {
-            let temp = arr[min]
-            arr[min] = arr[i]
-            arr[i] = temp
-        }
+var numIdenticalPairs = function (nums) {
+  let map = new Map();
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    let current = nums[i];
+    if (map.has(current)) {
+      count += map.get(current);
     }
-    return arr
-}
-console.log(selectionSort(arr));
+    map.set(current, (map.get(current) || 0) + 1);
+  }
+  return count;
+};
 
-
+console.log(numIdenticalPairs(nums));
