@@ -6,19 +6,17 @@
 
 // pattern programming nested looping
 
-let nums = [1, 2, 3, 1, 1, 3];
+let nums = [1, 2, 3, 4];
 
-var numIdenticalPairs = function (nums) {
-  let map = new Map();
-  let count = 0;
-  for (let i = 0; i < nums.length; i++) {
-    let current = nums[i];
-    if (map.has(current)) {
-      count += map.get(current);
+var decompressRLElist = function (nums) {
+  let ans = [];
+  for (let i = 0; i < nums.length; i += 2) {
+    let freq = nums[i]; //1  //3
+    let val = nums[i + 1]; //2  //4
+    for (let j = 0; j < freq; j++) {
+      ans.push(val);
     }
-    map.set(current, (map.get(current) || 0) + 1);
   }
-  return count;
+  return ans;
 };
-
-console.log(numIdenticalPairs(nums));
+console.log(decompressRLElist(nums));
